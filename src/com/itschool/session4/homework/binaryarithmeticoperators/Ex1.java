@@ -7,18 +7,16 @@ subtraction, multiplication, division, and modulus.
  */
 
 
-public class ex1 {
+public class Ex1 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter the first number: ");
-        double nr1;
-        nr1 = scanner.nextDouble();
+        double nr1 = scanner.nextDouble();
 
         System.out.print("Enter the second number: ");
-        double nr2;
-        nr2 = scanner.nextDouble();
+        double nr2 = scanner.nextDouble();
 
         double addition = nr1 + nr2;
         double subtraction = nr1 - nr2;

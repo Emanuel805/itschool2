@@ -2,7 +2,7 @@ package com.itschool.session4.homework.ex2;
 
 import java.util.Scanner;
 //Write a program that calculates the area of a rectangle. Take the length and breadth as inputs.
-public class ex2 {
+public class Ex2 {
 
     public static void main(String[] args) {
 
