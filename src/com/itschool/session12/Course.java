@@ -1,17 +1,12 @@
 package com.itschool.session12;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
 public class Course {
 
-    public String name;
-    public String schedule;
-    public String duration;
-    public  String description;
-    public Professor assignedProfessor;
-    public List<Student> students = new ArrayList<>();
+    private final String name;
+    private final String schedule;
+    private final String duration;
+    private final String description;
+    private final Professor assignedProfessor;
 
     public Course(String name, String schedule, String duration, String description, Professor assignedProfessor) {
         this.name = name;
@@ -29,8 +24,7 @@ public class Course {
                 ", schedule='" + schedule + '\'' +
                 ", duration='" + duration + '\'' +
                 ", description='" + description + '\'' +
-                ", assignedProfessor=" + assignedProfessor.firstName + " " + assignedProfessor.lastName +
-                ", studentsCount=" + students.size() +
+                ", assignedProfessor=" + assignedProfessor +
                 '}';
     }
 }
