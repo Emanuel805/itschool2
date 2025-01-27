@@ -21,6 +21,7 @@ public class Course {
         this.assignedProfessor = assignedProfessor;
     }
 
+
     @Override
     public String toString() {
         return "Course{" +
