@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Main {
     public static List<Student> students = new ArrayList<>();
-    public static List<Professor> professors = new ArrayList<>();
+    private static List<Professor> professors = new ArrayList<>();
     public static List<Course> courses = new ArrayList<>();
 
     public static void main(String[] args) {
@@ -29,6 +29,16 @@ public class Main {
         student1.dateOfBirth = "09.12.2000";
         students.add(student1);
 
+        Student student2 = new Student();
+        student2.firstName = "Creanga";
+        student2.lastName = "Ion";
+        students.add(student2);
+
+        Student student3 = new Student();
+        student3.firstName = "Mihai";
+        student3.lastName = "Eminescu";
+        students.add(student3);
+
         courses.add(new Course("Math", "Monday 10:00-12:00", "2 hours", "Math", prof1));
         courses.add(new Course("Computer Science", "Tuesday 14:00-16:00", "2 hours", "Computer Science", prof1));
         courses.add(new Course("Physics", "Wednesday 10:00-12:00", "2 hours", "Physics", prof1));
@@ -38,13 +48,34 @@ public class Main {
         courses.add(new Course("English", "Tuesday 10:00-12:00", "2 hours", "English", prof1));
         courses.add(new Course("History", "Wednesday 14:00-16:00", "2 hours", "History", prof1));
 
+        for (int i = 0; i < 3; i++) {
+            student1.courses.add(courses.get(i));
+            courses.get(i).students.add(student1);
+        }
+
+        // Assign multiple students to a single course
+        Course selectedCourse = courses.get(5);
+        for (Student student : students) {
+            selectedCourse.students.add(student);
+            student.courses.add(selectedCourse);
+        }
+        
         printStudents();
         printProfessors();
         printCourses();
 
+        printStudentCourses(students.get(0)); // Example: Print courses for the first student
+
     }
 
-    public static void printStudents() {
+    private static void printStudentCourses(Student student) {
+        System.out.println("Courses for " + student.firstName + " " + student.lastName + ":");
+        for (Course course : student.courses) {
+            System.out.println(course.name);
+        }
+    }
+
+    private static void printStudents() {
         System.out.println("Students:");
         for (Student student : students) {
             System.out.println(student.firstName + " " + student.lastName);
@@ -52,18 +83,19 @@ public class Main {
 
     }
 
-    public static void printProfessors() {
+    private static void printProfessors() {
         System.out.println("Professors:");
         for (Professor professor : professors) {
             System.out.println(professor.firstName + " " + professor.lastName);
         }
     }
 
-    public static void printCourses() {
+    private static void printCourses() {
         System.out.println("Courses:");
         for (Course course : courses) {
             System.out.println(course);
         }
+
     }
 }
 

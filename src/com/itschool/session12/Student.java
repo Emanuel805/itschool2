@@ -1,6 +1,9 @@
 package com.itschool.session12;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Student {
     public String firstName;
     public String lastName;
@@ -9,6 +12,7 @@ public class Student {
     public String dateOfBirth;
     public String cnp;
     public String address;
+    public List<Course> courses = new ArrayList<>();
 
     @Override
     public String toString() {
@@ -20,6 +24,7 @@ public class Student {
                 ", dateOfBirth=" + dateOfBirth +
                 ", cnp='" + cnp + '\'' +
                 ", address='" + address + '\'' +
+                ", coursesCount=" + courses.size() +
                 '}';
     }
 }
