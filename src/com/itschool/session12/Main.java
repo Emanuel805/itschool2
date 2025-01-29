@@ -49,22 +49,20 @@ public class Main {
         courses.add(new Course("History", "Wednesday 14:00-16:00", "2 hours", "History", prof1));
 
         for (int i = 0; i < 3; i++) {
-            student1.courses.add(courses.get(i));
-            courses.get(i).students.add(student1);
+            student1.enrollInCourse(courses.get(i));
         }
 
         // Assign multiple students to a single course
         Course selectedCourse = courses.get(5);
         for (Student student : students) {
-            selectedCourse.students.add(student);
-            student.courses.add(selectedCourse);
+            student.enrollInCourse(selectedCourse);
         }
         
         printStudents();
         printProfessors();
         printCourses();
 
-        printStudentCourses(students.get(0)); // Example: Print courses for the first student
+        printStudentCourses(students.get(2)); // Example: Print courses for the first student
 
     }
 

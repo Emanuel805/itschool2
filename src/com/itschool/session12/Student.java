@@ -14,6 +14,16 @@ public class Student {
     public String address;
     public List<Course> courses = new ArrayList<>();
 
+    public void enrollInCourse(Course course) {
+        if (!courses.contains(course)) {
+            courses.add(course);
+
+            /*this method ensures that a student is not enrolled in the same course more than once.
+            It adds the course to the student's list of courses only if it is not already present.
+             */
+        }
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -24,7 +34,6 @@ public class Student {
                 ", dateOfBirth=" + dateOfBirth +
                 ", cnp='" + cnp + '\'' +
                 ", address='" + address + '\'' +
-                ", coursesCount=" + courses.size() +
                 '}';
     }
 }
